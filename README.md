@@ -60,23 +60,23 @@ Now you can run tests. For example:
 ```sh
 pytest -s tests/test_facts_endpoint.py
 ```
-All tests configuration is avaiable in `config/config.yaml`. Reports after tests execution: `reports/report.html` (Generated automatically after test execution). 
+All tests configuration is avaiable in `config/config.yaml`. Reports after tests execution are available in `reports/report.html` (Generated automatically after test execution). 
 
 ## Overview
 
-This repository contains a suite of tests for validating the `/facts` endpoint of an API. The tests are written using `pytest` and cover various scenarios to ensure the reliability and correctness of the API responses. The tests validate fetching random cat facts, retrieving a specific fact by ID, handling different animal types, and checking correct and incorrect amounts of facts.
+This repository contains a suite of tests for validating the `/facts` endpoint of an API. The tests are written by `pytest` and cover various scenarios to ensure the reliability and correctness of the API responses. The tests validate fetching random cat facts, retrieving a specific fact by ID, handling different animal types, and checking correct and incorrect amounts of facts.
 
 ## Test Cases
 
-Below is a table summarizing the test cases included in the suite:
+There is a table summarizing the test cases included in the suite:
 
 | Test Case Name | Description | Validation Used | Reason for Validation |
 | -------------- | ----------- | ----------------| --------------------- |
-| `test_fetch_random_cat_fact` | Sends a request to get a random cat fact | - Check status code is 200 <br> - Check 'text' in response <br> - Check 'text' is a non-empty string | Ensure the endpoint returns a successful response with a valid fact |
-| `test_get_fact_by_id` | Retrieves a specific fact by ID | - Check status code is 200 <br> - Check `_id` matches the expected ID <br> - Check `text` matches the expected content | Validate the endpoint correctly fetches the fact by ID and returns the correct content |
-| `test_animal_type` | Sends a request to get a fact for a specific animal type | - Check status code is 200 <br> - Check 'type' in response <br> - Check 'type' matches the requested animal type | Ensure the endpoint returns the correct type of fact for different animals |
-| `test_correct_amount` | Sends a request to get a specific number of facts | - Check status code is 200 <br> - Check response length matches the requested amount | Verify the endpoint returns the correct number of facts |
-| `test_incorrect_amount` | Tests various invalid amounts to check error handling | - Check status code matches the expected code <br> - Check response payload matches the expected payload | Ensure the endpoint handles invalid amounts gracefully and returns appropriate error messages |
+| `test_fetch_random_cat_fact` | Sends a request to get a random cat fact | - Check if status code is 200 <br> - Check 'text' in response <br> - Check 'text' is a non-empty string | Ensure the endpoint returns a successful response with a valid fact |
+| `test_get_fact_by_id` | Retrieves a specific fact by ID | - Check if status code is 200 <br> - Check `_id` matches the expected ID <br> - Check `text` matches the expected content | Validate the endpoint correctly fetches the fact by ID and returns the correct content |
+| `test_animal_type` | Sends a request to get a fact for a specific animal type | - Check if status code is 200 <br> - Check 'type' in response <br> - Check 'type' matches the requested animal type | Ensure the endpoint returns the correct type of fact for different animals |
+| `test_correct_amount` | Sends a request to get a specific number of facts | - Check if status code is 200 <br> - Check response length matches the requested amount | Verify the endpoint returns the correct number of facts |
+| `test_incorrect_amount` | Tests various invalid amounts to check error handling | - Check if status code matches the expected code <br> - Check response payload matches the expected payload | Ensure the endpoint handles invalid amounts gracefully and returns appropriate error messages |
 
 ## Validation Details
 
